@@ -23,32 +23,32 @@ def bagi(a, b):
 
 while True:
     instruksi()
-    operasi = int(input('Masukkan angka untuk memilih operasi yang akan dilakukan : ').replace(',', '.'))
+    operasi = int(input('Masukkan angka untuk memilih operasi yang akan dilakukan : '))
     if operasi == 1:
         print('Kamu memilih operasi penjumlahan!\n')
-        a = float(input('Masukkan angka : '))
-        b = float(input('Masukkan angka : '))
+        a = float(input('Masukkan angka : ').replace(',', '.'))
+        b = float(input('Masukkan angka : ').replace(',', '.'))
 
         penjumlahan1 = tambah(a, b)
         print(f'\nHasil penjumlahan adalah {penjumlahan1:g}.\n')
     elif operasi == 2:
         print('Kamu memilih operasi pengurangan!\n')
-        a = float(input('Masukkan angka : '))
-        b = float(input('Masukkan angka : '))
+        a = float(input('Masukkan angka : ').replace(',', '.'))
+        b = float(input('Masukkan angka : ').replace(',', '.'))
 
         penngurangan1 = kurang(a, b)
         print(f'\nHasil pengurangan adalah {penngurangan1:g}.\n')
     elif operasi == 3:
         print('Kamu memilih operasi perkalian!\n')
-        a = float(input('Masukkan angka : '))
-        b = float(input('Masukkan angka : '))
+        a = float(input('Masukkan angka : ').replace(',', '.'))
+        b = float(input('Masukkan angka : ').replace(',', '.'))
 
         perkalian1 = kali(a, b)
         print(f'\nHasil perkalian adalah {perkalian1:g}.\n')
     elif operasi == 4:
         print('Kamu memilih operasi pembagian!\n')
-        a = float(input('Masukkan angka : '))
-        b = float(input('Masukkan angka : '))
+        a = float(input('Masukkan angka : ').replace(',', '.'))
+        b = float(input('Masukkan angka : ').replace(',', '.'))
 
         pembagian1 = bagi(a, b)
         print(f'\nHasil pembagian adalah {pembagian1:g}.\n')
