@@ -1,96 +1,75 @@
-print("\nSELAMAT DATANG DI KALKULATOR SEDERHANA\n")
-print("Apa yang ingin kamu lakukan....")
+print("\n___SELAMAT DATANG DI KALKULATOR SEDERHANA___\n")
 
 
 def instruksi():
-    print("Masukkan angka yang sesuai untuk melakukan operasi!")
-    print("Masukkan angka 1 untuk penjumlahan")
-    print("Masukkan angka 2 untuk pengurangan")
-    print("Masukkan angka 3 untuk perkalian")
-    print("Masukkan angka 4 untuk pembagian")
-    print("Masukkan angka -1 untuk keluar dari program\n")
+    print("Kami menyediakan operasi sederhana...")
+    print("Masukkan angka 1 untuk melakukan penjumlahan.")
+    print("Masukkan angka 2 untuk melakukan pengurangan.")
+    print("Masukkan angka 3 untuk melakukan perkalian.")
+    print("Masukkan angka 4 untuk melakukan pembagian.")
+    print("Masukkan angka -1 untuk keluar dari program.\n")
 
 
 def tambah(a, b):
-    hasil = a + b
-    return hasil
+    return a + b
 
 
 def kurang(a, b):
-    hasil = a - b
-    return hasil
+    return a - b
 
 
 def kali(a, b):
-    hasil = a * b
-    return hasil
+    return a * b
 
 
 def bagi(a, b):
-    hasil = a / b
-    return hasil
+    return a / b
 
 
 def masukkan():
-    a = float(input("Masukkan angka : ").replace(",", "."))
-    b = float(input("Masukkan angka : ").replace(",", "."))
+    try:
+        a = float(input("Masukkan angka : ").replace(",", "."))
+        b = float(input("Masukkan angka : ").replace(",", "."))
+    except ValueError:
+        print("Error, hanya bisa memasukkan angka.")
+
     return a, b
 
 
-pick_operation = {
+memilih_operasi = {
     1: ("penjumlahan", tambah),
     2: ("pengurangan", kurang),
     3: ("perkalian", kali),
     4: ("pembagian", bagi),
 }
 
+
+instruksi()
 while True:
-    instruksi()
     try:
         operasi = int(
-            input("Masukkan angka untuk memilih operasi yang akan dilakukan : ")
+            input(
+                "Masukkan angka sesuai instruksi untuk memilih operasi yang akan dilakukan : "
+            )
         )
     except ValueError:
-        print("Error, hanya bisa memasukkan angka!!\n")
+        print("Error, hanya bisa memasukkan angka.\n")
         continue
 
-    if operasi in pick_operation:
-        print(f"Kamu memilih operasi {pick_operation[operasi]}\n.")
-    else:
-        print("MASUKKAN ANGKA YANG SESUAI INTRUKSI!!\n")
-
-"""
-    if operasi == 1:
-        print('Kamu memilih operasi penjumlahan!\n')
-        a, b = masukkan()
-        penjumlahan1 = tambah(a, b)
-        print(f'\nHasil penjumlahan adalah {penjumlahan1:g}.\n')
-
-    elif operasi == 2:
-        print('Kamu memilih operasi pengurangan!\n')
-        a, b = masukkan()
-        penngurangan1 = kurang(a, b)
-        print(f'\nHasil pengurangan adalah {penngurangan1:g}.\n')
-
-    elif operasi == 3:
-        print('Kamu memilih operasi perkalian!\n')
-        a, b = masukkan()
-        perkalian1 = kali(a, b)
-        print(f'\nHasil perkalian adalah {perkalian1:g}.\n')
-
-    elif operasi == 4:
-        print('Kamu memilih operasi pembagian!\n')
-        a, b = masukkan()
-        if b == 0:
-            print('Tidak bisa melakukan pembagian dengan 0.\n')
-        else:
-            pembagian1 = bagi(a, b)
-            print(f'\nHasil pembagian adalah {pembagian1:g}.\n')
-
-    elif operasi == -1:
-        print('Terima kasih sudah menggunakan program kalkulator sederhana kami.\n')
+    if operasi == -1:
+        print("Terimakasih sudah menggunakan kalkulator sederhana kami.\n")
         break
+    elif operasi in memilih_operasi:
+        nama_operasi, hasil = memilih_operasi[operasi]
+        print(f"Kamu memilih operasi {nama_operasi}.\n")
+
+        a, b = masukkan()
+
+        if operasi == 4 and b == 0:
+            print("Tidak bisa melakukan pembagian dengan nol.\n")
+        else:
+            result = hasil(a, b)
+            print(f"Hasil {nama_operasi} yaitu {result:g}.\n")
 
     else:
-        print('\nANGKA YANG ANDA MASUKKAN TIDAK SESUAI!!\n')
-"""
+        print("ERROR, INPUT TIDAK VALID!!")
