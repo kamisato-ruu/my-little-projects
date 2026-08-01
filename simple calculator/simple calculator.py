@@ -31,10 +31,10 @@ def masukkan():
         try:
             a = float(input("Masukkan angka : ").replace(",", "."))
             b = float(input("Masukkan angka : ").replace(",", "."))
+            return a, b
         except ValueError:
             print("Error, hanya bisa memasukkan angka.")
 
-        return a, b
 
 
 memilih_operasi = {
