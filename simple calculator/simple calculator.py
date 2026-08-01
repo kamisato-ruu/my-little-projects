@@ -1,40 +1,65 @@
-print('\nSELAMAT DATANG DI KALKULATOR SEDERHANA\n')
-print('Apa yang ingin kamu lakukan....')
+print("\nSELAMAT DATANG DI KALKULATOR SEDERHANA\n")
+print("Apa yang ingin kamu lakukan....")
+
+
 def instruksi():
-    print('Masukkan angka yang sesuai untuk melakukan operasi!')
-    print('Masukkan angka 1 untuk penjumlahan')
-    print('Masukkan angka 2 untuk pengurangan')
-    print('Masukkan angka 3 untuk perkalian')
-    print('Masukkan angka 4 untuk pembagian')
-    print('Masukkan angka -1 untuk keluar dari program\n')
-    
+    print("Masukkan angka yang sesuai untuk melakukan operasi!")
+    print("Masukkan angka 1 untuk penjumlahan")
+    print("Masukkan angka 2 untuk pengurangan")
+    print("Masukkan angka 3 untuk perkalian")
+    print("Masukkan angka 4 untuk pembagian")
+    print("Masukkan angka -1 untuk keluar dari program\n")
+
+
 def tambah(a, b):
     hasil = a + b
     return hasil
+
+
 def kurang(a, b):
     hasil = a - b
     return hasil
-def kali(a,b):
+
+
+def kali(a, b):
     hasil = a * b
     return hasil
+
+
 def bagi(a, b):
     hasil = a / b
     return hasil
 
+
 def masukkan():
-    a = float(input('Masukkan angka : ').replace(',', '.'))
-    b = float(input('Masukkan angka : ').replace(',', '.'))
+    a = float(input("Masukkan angka : ").replace(",", "."))
+    b = float(input("Masukkan angka : ").replace(",", "."))
     return a, b
 
+
+pick_operation = {
+    1: ("penjumlahan", tambah),
+    2: ("pengurangan", kurang),
+    3: ("perkalian", kali),
+    4: ("pembagian", bagi),
+}
 
 while True:
     instruksi()
     try:
-        operasi = int(input('Masukkan angka untuk memilih operasi yang akan dilakukan : '))
+        operasi = int(
+            input("Masukkan angka untuk memilih operasi yang akan dilakukan : ")
+        )
     except ValueError:
         print("Error, hanya bisa memasukkan angka!!\n")
         continue
 
+    if operasi in pick_operation:
+        print(f"Kamu memilih operasi {pick_operation[operasi]}\n.")
+    else:
+        print("MASUKKAN ANGKA YANG SESUAI INTRUKSI!!\n")
+
+"""
     if operasi == 1:
         print('Kamu memilih operasi penjumlahan!\n')
         a, b = masukkan()
@@ -65,8 +90,7 @@ while True:
     elif operasi == -1:
         print('Terima kasih sudah menggunakan program kalkulator sederhana kami.\n')
         break
-    
+
     else:
         print('\nANGKA YANG ANDA MASUKKAN TIDAK SESUAI!!\n')
-        
-        
+"""
