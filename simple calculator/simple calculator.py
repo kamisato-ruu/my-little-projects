@@ -27,13 +27,14 @@ def bagi(a, b):
 
 
 def masukkan():
-    try:
-        a = float(input("Masukkan angka : ").replace(",", "."))
-        b = float(input("Masukkan angka : ").replace(",", "."))
-    except ValueError:
-        print("Error, hanya bisa memasukkan angka.")
+    while True:
+        try:
+            a = float(input("Masukkan angka : ").replace(",", "."))
+            b = float(input("Masukkan angka : ").replace(",", "."))
+        except ValueError:
+            print("Error, hanya bisa memasukkan angka.")
 
-    return a, b
+        return a, b
 
 
 memilih_operasi = {
@@ -72,4 +73,4 @@ while True:
             print(f"Hasil {nama_operasi} yaitu {result:g}.\n")
 
     else:
-        print("ERROR, INPUT TIDAK VALID!!")
+        print("ERROR, INPUT TIDAK VALID!!\n")
