@@ -60,6 +60,7 @@ body {
 .top-screen button {
   background-color: transparent;
   padding: 0;
+  cursor: pointer;
 }
 
 .main-screen {
@@ -100,6 +101,7 @@ body {
   color: var(--primary);
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .main-screen-button .material-symbols-outlined, .feather {

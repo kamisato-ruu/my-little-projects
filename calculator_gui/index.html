@@ -43,13 +43,13 @@
       <!-- display start -->     
       <div class="main-screen">
         <div class="display-main-screen">
-          <input type="text" id="output-display-main-screen" value="" placeholder="0" />
+          <input type="text" id="output-display-main-screen" value="" placeholder="0" readonly/>
         </div>
         <!-- display end -->
         <div class="main-screen-button">
           <button id="clear">C</button>
-          <button id="persen" class="operation">
-            <i data-feather="percent"></i>
+          <button id="persen" class="operation" data-operators="%">
+            <i data-feather="percent" ></i>
           </button>
           <button id="operasi-bagi" data-operators="/">
             <i data-feather="divide"></i>
@@ -76,7 +76,7 @@
             <i data-feather="plus"></i>
           </button>
           <button class="number" id="number-0">0</button>
-          <button id="titik">.</button>
+          <button id="titik" data-operators=".">.</button>
           <button id="equal">
             <span class="material-symbols-outlined"> equal </span>
           </button>
