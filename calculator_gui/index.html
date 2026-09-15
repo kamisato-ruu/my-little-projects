@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Caclculator</title>
+    <!-- FONT START -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FONT START -->
+
+    <!--ICONS START-->
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <!--ICONS START-->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="judul"><h2>My Simple Calculator</h2></section>
+
+    <!-- LAYAR START-->
+    <section class="screen">
+
+      <!-- header start -->     
+      <header class="top-screen">
+        <button id="back" class="top-screen-icon">
+          <i data-feather="arrow-left"></i>
+        </button>
+        <a href="#settings.html" id="settings" class="top-screen-icon">
+          <i data-feather="settings"></i>
+        </a>
+      </header>
+      <!-- header end -->
+
+      <!-- display start -->     
+      <div class="main-screen">
+        <div class="display-main-screen">
+          <input type="text" value="0" />
+        </div>
+        <!-- display end -->
+        <div class="main-screen-button">
+          <button id="clear">C</button>
+          <button id="persen">
+            <i data-feather="percent"></i>
+          </button>
+          <button id="operasi-bagi">
+            <i data-feather="divide"></i>
+          </button>
+          <button id="delete">
+            <i data-feather="delete"></i>
+          </button>
+          <button id="angka-7">7</button>
+          <button id="angka-8">8</button>
+          <button id="angka-9">9</button>
+          <button id="operasi-kali">
+            <i data-feather="x"></i>
+          </button>
+          <button id="angka-4">4</button>
+          <button id="angka-5">5</button>
+          <button id="angka-6">6</button>
+          <button id="operasi-kurang">
+            <i data-feather="minus"></i>
+          </button>
+          <button id="angka-1">1</button>
+          <button id="angka-2">2</button>
+          <button id="angka-3">3</button>
+          <button id="operasi-tambah">
+            <i data-feather="plus"></i>
+          </button>
+          <button id="angka-0">0</button>
+          <button id="titik">.</button>
+          <button id="equal">
+            <span class="material-symbols-outlined"> equal </span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- LAYAR end-->
+    <script>
+      feather.replace();
+    </script>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
